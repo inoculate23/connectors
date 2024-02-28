@@ -132,7 +132,7 @@ var header1 = document.getElementById('header1');
       const doodlink = ('https://doodapi.com/api/upload/url?key=PROCESS.ENV.DOOD&url=');
       
       const btn_link = document.createElement('a');
-      btn_link.setAttribute('href', doodlink+apidata.data[i].link);
+      btn_link.setAttribute('href', doodlink+res.data[i].link);
       btn_link.setAttribute('target', 'iframe_log');
       var up_btn = document.createElement('button');
       up_btn.setAttribute('class', 'btn-primary');
