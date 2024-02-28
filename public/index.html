@@ -83,7 +83,47 @@ justify-content: space-evenly;
         </style>
         <script>
        
-  
+         
+       for (let i = 0; i < 700; i++) {
+let cont = document.createElement('div');
+cont.setAttribute("class", 'cont')
+let cont2 = document.createElement('div');
+cont2.setAttribute('class', "caption");
+//let pre = document.createElement('pre');
+//pre.setAttribute('class', 'pre');
+//pre.innerHTML = data.videos[i].url;
+let img = document.createElement('img');
+img.setAttribute('class', 'image');
+img.setAttribute('src', res.data[i].image);
+let ep_frame = document.createElement('iframe');
+ep_frame.setAttribute('src', res.data[i].video);
+
+let dl = document.createElement('a');
+//////dl.setAttribute('href', data.videos[i].url);
+//dl.setAttribute('class', "dl");
+//dl.innerText = 'Link';
+
+let title = document.createElement('h2');
+//let title2 = res.data[i].title+'  ';
+////let title3 = document.createElement('h3');
+//let date = 'Added:'+'  '+res.data[i].views+'  Duration:  ';
+//let duration = res.data[i].views
+
+var header1 = document.getElementById('header1');
+              header1.append(cont);
+              cont.appendChild(iframe);
+              header1.append(img);
+              header1.append(title);
+          //    title.append(title2);
+           //   title.append(title3)
+          //   title3.append(date);
+           //  title3.append(duration);
+            
+            
+            
+              
+
+    
   
 
 
