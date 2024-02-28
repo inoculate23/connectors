@@ -134,6 +134,7 @@ function getApi() {
 var dv = document.getElementById('header1');
 
 // remove all child nodes
+// remove all child nodes
 while (dv.hasChildNodes()) {
     dv.removeChild(dv.lastChild);
 }
@@ -157,9 +158,9 @@ cont2.setAttribute('class', "caption");
 //pre.innerHTML = data.videos[i].url;
 let img = document.createElement('img');
 img.setAttribute('class', 'image');
-img.setAttribute('src', res.data[i].image);
+img.setAttribute('src', data[i].image);
 let ep_link = document.createElement('a');
-ep_link.setAttribute('href', res.data[i].link);
+ep_link.setAttribute('href', data[i].link);
 
 let dl = document.createElement('a');
 //////dl.setAttribute('href', data.videos[i].url);
@@ -167,10 +168,10 @@ let dl = document.createElement('a');
 //dl.innerText = 'Link';
 
 let title = document.createElement('h2');
-let title2 = res.data[i].title+'  ';
+let title2 = data[i].title+'  ';
 let title3 = document.createElement('h3');
-let date = 'Added:'+'  '+res.data[i].views+'  Duration:  ';
-let duration = res.data[i].views
+let date = 'Added:'+'  '+data[i].views+'  Duration:  ';
+//let duration = res.data[i].views
 
 var header1 = document.getElementById('header1');
               header1.append(cont);
@@ -180,7 +181,7 @@ var header1 = document.getElementById('header1');
               title.append(title2);
               title.append(title3)
              title3.append(date);
-             title3.append(duration);
+           //  title3.append(duration);
             
             
             
