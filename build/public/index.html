@@ -82,8 +82,75 @@ justify-content: space-evenly;
             
         </style>
         <script>
-       
+           function responseData() {
+  if (this.readyState === this.DONE) {
+    var res = JSON.parse(this.responseText);
+    console.log(res);
+         var res = JSON.parse(this.responseText);
+    console.log(res);
+       for (let i = 0; i < 700; i++) {
+let cont = document.createElement('div');
+cont.setAttribute("class", 'cont')
+let cont2 = document.createElement('div');
+cont2.setAttribute('class', "caption");
+//let pre = document.createElement('pre');
+//pre.setAttribute('class', 'pre');
+//pre.innerHTML = data.videos[i].url;
+let img = document.createElement('img');
+img.setAttribute('class', 'image');
+img.setAttribute('src', res.data[i].image);
+let ep_frame = document.createElement('iframe');
+ep_frame.setAttribute('src', res.data[i].video);
+
+let dl = document.createElement('a');
+//////dl.setAttribute('href', data.videos[i].url);
+//dl.setAttribute('class', "dl");
+//dl.innerText = 'Link';
+
+let title = document.createElement('h2');
+//let title2 = res.data[i].title+'  ';
+////let title3 = document.createElement('h3');
+//let date = 'Added:'+'  '+res.data[i].views+'  Duration:  ';
+//let duration = res.data[i].views
+
+var header1 = document.getElementById('header1');
+              header1.append(cont);
+              cont.appendChild(iframe);
+              header1.append(img);
+              header1.append(title);
+          //    title.append(title2);
+           //   title.append(title3)
+          //   title3.append(date);
+           //  title3.append(duration);
+            
+            
+            
+              
+
+    
   
+      const doodlink = ('https://doodapi.com/api/upload/url?key=PROCESS.ENV.DOOD&url=');
+      
+      const btn_link = document.createElement('a');
+      btn_link.setAttribute('href', doodlink+apidata.data[i].link);
+      btn_link.setAttribute('target', 'iframe_log');
+      var up_btn = document.createElement('button');
+      up_btn.setAttribute('class', 'btn-primary');
+            // up_btn.setAttribute('content', 'upload');
+            // up_btn.setAttribute("onclick", "dood()")
+         
+cont.append(btn_link)
+btn_link.append(up_btn);
+ t = document.createTextNode('To cloud');
+up_btn.appendChild(t);
+  
+}
+
+
+
+}
+           }
+          
   
 
 
@@ -103,7 +170,7 @@ justify-content: space-evenly;
       <button id="nipples"class="btn btn-sm btn-primary" onclick="myfunction_nipples()">Big Nipples</button>
       <button id="toe" class="btn btn-sm btn-primary" onclick="myfunction_toe()">Cameltoe</button>
       <input id="apiBtn" type="text" onchange="getApi()" placeholder="XHamster search"></input>
-      <input id="apiBtn" type="text" onchange="getApi()" placeholder="api search"></input>
+      <input id="apiBtn2" type="text" onchange="getApi2()" placeholder="api search"></input>
        <input id="xnxx"  type="text" onchange="getXnxx()" placeholder="Xnxx search"></input>
        <input id="getSearch"  type="text" onchange="getSearch()" placeholder="Xnxx search"></input>
       <input id="vid_src" type="url"></input>
@@ -131,7 +198,7 @@ justify-content: space-evenly;
 //api
 
 
-function getApi() { 
+function getApi2() { 
 var dv = document.getElementById('header1');
 
 // remove all child nodes
@@ -146,7 +213,7 @@ xhr.withCredentials = false;
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === this.DONE) {
     var res = JSON.parse(this.responseText);
-    console.log(data);
+    console.log(res);
 
     for (let i = 0; i < 700; i++) {
 let cont = document.createElement('div');
@@ -215,8 +282,8 @@ up_btn.appendChild(t);
 
   
 
-var apiBtn_value = document.getElementById('apiBtn').value;
-xhr.open("GET", "https://lust.scathach.id/xhamster/search?key="+apiBtn_value);
+var apiBtn2_value = document.getElementById('apiBtn2').value;
+xhr.open("GET", "https://lust.scathach.id/xhamster/search?key="+apiBtn2_value);
 
 
 xhr.send();
