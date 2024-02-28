@@ -82,8 +82,12 @@ justify-content: space-evenly;
             
         </style>
         <script>
-       
-         
+           function responseData() {
+  if (this.readyState === this.DONE) {
+    var res = JSON.parse(this.responseText);
+    console.log(res);
+         var res = JSON.parse(this.responseText);
+    console.log(res);
        for (let i = 0; i < 700; i++) {
 let cont = document.createElement('div');
 cont.setAttribute("class", 'cont')
@@ -124,6 +128,29 @@ var header1 = document.getElementById('header1');
               
 
     
+  
+      const doodlink = ('https://doodapi.com/api/upload/url?key=PROCESS.ENV.DOOD&url=');
+      
+      const btn_link = document.createElement('a');
+      btn_link.setAttribute('href', doodlink+apidata.data[i].link);
+      btn_link.setAttribute('target', 'iframe_log');
+      var up_btn = document.createElement('button');
+      up_btn.setAttribute('class', 'btn-primary');
+            // up_btn.setAttribute('content', 'upload');
+            // up_btn.setAttribute("onclick", "dood()")
+         
+cont.append(btn_link)
+btn_link.append(up_btn);
+ t = document.createTextNode('To cloud');
+up_btn.appendChild(t);
+  
+}
+
+
+
+}
+           }
+          
   
 
 
@@ -186,7 +213,7 @@ xhr.withCredentials = false;
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === this.DONE) {
     var res = JSON.parse(this.responseText);
-    console.log(data);
+    console.log(res);
 
     for (let i = 0; i < 700; i++) {
 let cont = document.createElement('div');
