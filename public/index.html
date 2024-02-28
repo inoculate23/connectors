@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charSet="utf-8"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+ <!-- Meta Tags Generated with https://metatags.io -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="./js/xnxx.js"></script>
+<script src="./js/ph.js"></script>
+<script src="./js/dood.js"></script>
+<script src="./js/main4.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Honk&family=Josefin+Sans&family=Oswald&family=Roboto&display=swap" rel="stylesheet">
+      
+      
+      <style>
+            html,body {
+                margin:0;
+            }
+            .row {
+  display: flex;
+}
+
+#header1{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+flex-flow:wrap;
+align-items: center;
+justify-content: space-evenly;
+
+}
+#btn_cont {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+flex-flow:wrap;
+align-items: center;
+justify-content:center;
+}
+#admin {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+flex-flow:wrap;
+align-items: center;
+
+}
+.image {
+  background-color: crimson;
+  width:100%;
+  padding: 4px;
+  margin:7px;
+  box-shadow: rgba(39, 7, 39, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+h1{
+  font-family: 'Honk', system-ui;
+  font-size:96px;
+ 
+}
+
+
+#iframe_log {
+  width:79%;
+  height:100px;
+}
+.cont {
+  width:32%;
+  
+}
+
+.cont2 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+flex-flow:wrap;
+align-items: center;
+justify-content: space-evenly;
+  width:100%;
+}
+            
+        </style>
+        <script>
+       
+  
+  
+
+
+      
+        </script>
+  <body data-theme="dracula">
+    <div data-theme="retro" id="header">
+      <h1 class="text-4xl">The Retro Shack - Classic Porn as it should be</h1>
+   
+    <div id="btn_cont">
+      <button id="dood" class="btn btn-sm btn-primary" onclick="dood()">Dood</button>
+      <button id="hairy" class="btn btn-sm btn-primary" onclick="myfunction_hairy()">Hairy</button>
+      <button id="couples" class="btn btn-sm btn-primary" onclick="myfunction_couples()">Couples</button>
+
+      <button id="bigboobs" class="btn btn-sm btn-primary" onclick="myfunction_bigboobs()">Big Boobs</button>
+      <button id="smoke" class="btn btn-sm btn-primary" onclick="myfunction_smoke()">Smoke</button>
+      <button id="nipples"class="btn btn-sm btn-primary" onclick="myfunction_nipples()">Big Nipples</button>
+      <button id="toe" class="btn btn-sm btn-primary" onclick="myfunction_toe()">Cameltoe</button>
+      <input id="apiBtn" type="text" onchange="getApi()" placeholder="XHamster search"></input>
+      <input id="apiBtn" type="text" onchange="getApi()" placeholder="api search"></input>
+       <input id="xnxx"  type="text" onchange="getXnxx()" placeholder="Xnxx search"></input>
+       <input id="getSearch"  type="text" onchange="getSearch()" placeholder="Xnxx search"></input>
+      <input id="vid_src" type="url"></input>
+      <button id='upload_btn'>Upload</button>
+      </div>
+    </div> </div>  </div></div>
+
+    <button id="dood" onclick="myFunction_fetch()">submit</button>
+    <center> <h2>Upload Log:</h2>
+   <iframe id="iframe_log" name="iframe_log"></iframe></center>
+
+
+
+     
+      <div id='res_div'>Response:</div>
+    </div>
+  </div>
+  
+<div class="row">
+  <div class="header" id="header1"></div>
+
+</div>
+<script>
+
+//api
+
+
+function getApi() { 
+var dv = document.getElementById('header1');
+
+// remove all child nodes
+while (dv.hasChildNodes()) {
+    dv.removeChild(dv.lastChild);
+}
+const data = null;
+
+const xhr = new XMLHttpRequest();
+xhr.withCredentials = false;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === this.DONE) {
+    var res = JSON.parse(this.responseText);
+    console.log(data);
+
+    for (let i = 0; i < 700; i++) {
+let cont = document.createElement('div');
+cont.setAttribute("class", 'cont')
+let cont2 = document.createElement('div');
+cont2.setAttribute('class', "caption");
+//let pre = document.createElement('pre');
+//pre.setAttribute('class', 'pre');
+//pre.innerHTML = data.videos[i].url;
+let img = document.createElement('img');
+img.setAttribute('class', 'image');
+img.setAttribute('src', res.data[i].image);
+let ep_link = document.createElement('a');
+ep_link.setAttribute('href', res.data[i].link);
+
+let dl = document.createElement('a');
+//////dl.setAttribute('href', data.videos[i].url);
+//dl.setAttribute('class', "dl");
+//dl.innerText = 'Link';
+
+let title = document.createElement('h2');
+let title2 = res.data[i].title+'  ';
+let title3 = document.createElement('h3');
+let date = 'Added:'+'  '+res.data[i].views+'  Duration:  ';
+let duration = res.data[i].views
+
+var header1 = document.getElementById('header1');
+              header1.append(cont);
+              cont.appendChild(ep_link);
+              ep_link.append(img);
+              cont.append(title);
+              title.append(title2);
+              title.append(title3)
+             title3.append(date);
+             title3.append(duration);
+            
+            
+            
+              
+
+     
+      ep_link.append(img);
+      cont.append(title)
+  
+      const doodlink = ('https://doodapi.com/api/upload/url?key=38097btarnlrk00xmbxr6&url=');
+      
+      const btn_link = document.createElement('a');
+      btn_link.setAttribute('href', doodlink+apidata.data[i].link);
+      btn_link.setAttribute('target', 'iframe_log');
+      var up_btn = document.createElement('button');
+      up_btn.setAttribute('class', 'btn-primary');
+            // up_btn.setAttribute('content', 'upload');
+            // up_btn.setAttribute("onclick", "dood()")
+         
+cont.append(btn_link)
+btn_link.append(up_btn);
+ t = document.createTextNode('To cloud');
+up_btn.appendChild(t);
+  
+}
+}
+
+}
+)
+
+
+  
+
+var apiBtn_value = document.getElementById('apiBtn').value;
+xhr.open("GET", "https://lust.scathach.id/xhamster/search?key="+apiBtn_value);
+
+
+xhr.send();
+
+}
+
+
+
+</script>
+<div class="join">
+  <button class="join-item btn">Next Page</button>
+
+</div>
+  </body>
+ </html>
